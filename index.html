@@ -1,0 +1,74 @@
+﻿<!doctype html>
+<html>
+	<head>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+		<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}"/>	
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+	</head>
+	<body>
+		<div class="grid-container">
+		  <header class="header">
+           <input id="searchbar" onkeyup="search_graphe()"   type="text" name="search"placeholder="search graphe" autocomplete="off">
+            <ol id="list">
+				<li class="graphe">graphe courbe</li>
+				<li class="graphe">graphe barre</li>
+				<li class="graphe">diagramme circulaire </li>
+				<li class="graphe">graphe</li>
+			</ol>
+			<button id="button" onclick="cree()">Actualiser</button>
+		  </header>
+		  <aside class="sidenav">	
+			<div id="logo">
+				<img src="{{url_for('static', filename='img/logo.jpg')}}" height="40px" width="40px"/>
+				<p style="display:inline">Dashboard</p>
+				<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+			</div>			
+			<div id="menu">
+				<ul class="gh">
+					<li>  <a href="#" class="current"> <i class="fa-solid fa-house-user"></i> Université</a></li>
+				  <li><a href="#"> <i class="fa-solid fa-user"></i> utilisateur</a></li>
+				  <li><a href="#"><i class="fa-solid fa-gear"></i> paramètres</a></li>
+				  <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i> Exit</a></li>
+				</ul>
+		   </div>	
+		  </aside>
+		  <main class="main">	
+			<div class="card" id="graphe2">
+				<div class="titre">
+					<p>le nombre des étudiants par année .</p>
+				</div>
+				<div class="card-content">
+					<canvas id="bar-chart" width="350" height="250"></canvas>
+				</div>
+			</div>
+			<div class="card" id="graphe3">
+				<div class="titre">
+					<p>le nombre d'etudiant dans chaque specialité </p>
+				</div>
+				<div class="card-content">
+					<canvas id="line-chart" width="600" height="240"></canvas>
+				</div>
+			</div>
+			<div class="card" id="graphe1">
+				<div class="titre">
+					<p>Diagramme circulaire des etudiants ayant une montion tres bien(une moyenne superieur  16) </p>
+				</div>
+				<div class="card-content">
+					<canvas id="pie-chart" width="300" height="220"></canvas>
+				</div>
+			</div>
+			<div class="card" id="graphe4">
+				<div class="titre">
+					<p>le nombre de garcons et filles durant 3 années</p>
+				</div>
+				<div class="card-content">
+					<canvas id="bar-chart-grouped" width="370" height="240"></canvas>
+				</div>
+			</div>			
+		  </main>
+		  <footer class="footer"></footer>
+		</div>
+		
+		<script src="{{url_for('static', filename='script.js')}}"></script>
+	</body>
+</html>
